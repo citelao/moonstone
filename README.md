@@ -1,4 +1,4 @@
-moonstone
-=========
+Project Moonstone
+=================
 
-cse132 game
+Here is our CSE132 game, written in a language untaught in CSE132.
