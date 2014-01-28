@@ -18,6 +18,8 @@ MessageCenter::addObserver(std::string message, void (*function)(void)) {
 
 MessageCenter::notify(std::string message, std::vector<int> args) {
 
-	
+	for(int i=0; i < messages[message].length(); i++) {
+		messages[message][i]();
+	}
 
 }
