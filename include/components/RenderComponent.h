@@ -23,7 +23,7 @@ class Render : Component {
 	private:
 	
 		std::map<std::string, AnimationSequenceComponent*> animations;
-        typedef std::map<std::string, AnimationSequenceComponent*>::iterator i_animations;
+		typedef std::map<std::string, AnimationSequenceComponent*>::iterator i_animations;
 		
 };
 
