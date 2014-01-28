@@ -8,6 +8,10 @@
 #include "Component.h"
 #include "RenderComponent.h"
 
+//	main system for rendering
+//	contains the renderWindow, and camera
+//	draws all objects, lighting, UI (may be seperate system that talks to RenderSystem), etc
+
 class RenderSystem : System {
 
 	public:

@@ -9,6 +9,9 @@
 
 #include "AnimationSequenceComponent.h"
 
+//	component for containing render data
+//	acted on by the render system
+
 class RenderComponent : Component {
 
 	public:

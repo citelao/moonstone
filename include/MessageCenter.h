@@ -5,6 +5,8 @@
 #include <vector>
 #include <map>
 
+//	handles the observer pattern, notifies listners of messages
+
 class MessageCenter {
 
 	public:

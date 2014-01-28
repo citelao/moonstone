@@ -8,6 +8,9 @@
 
 #include "Component.h"
 
+//	special component contained within the RenderComponent
+//	does contain special logic
+
 class AnimationSequenceComponent : Component {
 
     public:

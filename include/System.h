@@ -6,6 +6,8 @@
 #include "Entity.h"
 #include "MessageCenter.h"
 
+//	basic system, acts on entities, and their components, contains map of entities within them
+
 class System {
 	
 	public:

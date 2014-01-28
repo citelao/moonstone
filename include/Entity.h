@@ -6,6 +6,8 @@
 
 #include "Component.h"
 
+//	contains components and belongs to systems
+
 class Entity {
 
 	public:

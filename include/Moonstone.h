@@ -7,6 +7,9 @@
 #include "Component.h"
 #include "System.h"
 
+//	base engine class, controls systems, entities, and the MessageCenter
+//	adds entities to the correct system when they are given components
+
 class Moonstone {
 
 	public:
