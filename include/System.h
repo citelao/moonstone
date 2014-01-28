@@ -4,11 +4,14 @@
 #include <map>
 
 #include "Entity.h"
+#include "MessageCenter.h"
 
 class System {
 	
 	public:
-	
+		
+		MessageCenter *postman;	//	set this in constructor?? or somewhere else?
+		
 		void Update(float elapsedTime);
 		void AddEntity(Entity *entity);
 		void RemoveEntity(int id);

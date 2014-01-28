@@ -26,6 +26,8 @@ int main() {
 		
 		renderWindow.clear(sf::Color::Black);
 		
+		//	draw your junk here
+		
 		renderWindow.display();
 	
 	}
