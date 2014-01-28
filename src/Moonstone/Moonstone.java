@@ -20,17 +20,19 @@ public class Moonstone {
 	}
 	
 	//	creates an entity
-	public Entity SpawnEntity(List<Component> components) {
-		Entity tempEnt = new Entity(entityId);
-		entities.put(entityId, tempEnt);
+	public void SpawnEntity(List<Component> components) {
+		int id = entityId;
+		Entity tempEnt = new Entity(id);
+		entities.put(id, tempEnt);
 		
 		for(Component component : components) {
-			//	map entity to systems in here based off of their components
-			entities.get(entityId).components.put(component.toString(), component);
+			entities.get(id).components.put(component.toString(), component);
 		}
 		
+		CheckEntitySystems(id);
+		
 		entityId++;
-		return tempEnt;
+		//return tempEnt;	//	if we want to return the entity as an object
 	}
 	
 	//	attaches a component to an entity
@@ -38,7 +40,14 @@ public class Moonstone {
 		entities.get(id).components.put(component.toString(), component);
 	}
 	
-	//	check and entity for what systems it should be in based on its components, and assign it to those systems
+	//	attaches multiple components to an entity
+	public void AttachComponents(int id, List<Component> components) {
+		for(Component component : components) {
+			entities.get(id).components.put(component.toString(), component);
+		}
+	}
+	
+	//	check an entity for what systems it should be in based on its components, and assign it to those systems
 	public void CheckEntitySystems(int id) {
 		
 		for(Map.Entry<String, System> systemEntry : systems.entrySet()) {
