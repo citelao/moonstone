@@ -12,7 +12,7 @@ class System {
 	
 	public:
 		
-		MessageCenter *postman;	//	set this in constructor?? or somewhere else?
+		MessageCenter *postman;	//	have Moonstone hand this off to the new system on init
 		
 		void Update(float elapsedTime);
 		void AddEntity(Entity *entity);

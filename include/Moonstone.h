@@ -2,6 +2,7 @@
 #define MOONSTONE_H_INCLUDED
 
 #include <vector>
+#include <map>
 
 #include "Entity.h"
 #include "Component.h"
@@ -14,8 +15,19 @@ class Moonstone {
 
 	public:
 		
+		int entityID = 0;	//	increments for every created entity
+		
 		std::vector<System*> systems;
-		std::vector<Entity*> entities;
+		std::map<int, Entity*> entities;
+		
+		void Update(float elapsedTime);
+		
+		void AddSystem(System *sys);
+		void RemoveSystem(std::string system);	//	string for system access seems dirty
+		
+		int SpawnEntity(std::vector<Component*> *components);	//	use argument/message system to pass components, returns id?
+		void AttachComponent(int id, Componenet *component);
+		void DestroyEntity(int id);
 
 };
 
