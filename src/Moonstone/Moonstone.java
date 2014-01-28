@@ -1,6 +1,7 @@
 package Moonstone;
 
 import java.util.*;
+import Moonstone.systems.*;
 
 //	base engine class, keeps track of systems, and handles entities
 
@@ -41,6 +42,7 @@ public class Moonstone {
 	public void AttachComponent(int id, Component component) {
 		entities.get(id).components.put(component.toString(), component);
 	}
+	
 	
 	//	attaches multiple components to an entity
 	public void AttachComponents(int id, List<Component> components) {
