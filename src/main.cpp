@@ -2,33 +2,31 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "System.h"
+#include "RenderSystem.h"
+
 int main() {
 
-	sf::Event event;
+	sf::RenderWindow *renderWindow;
 	sf::Clock clock;
+	sf::Event event;
 	float elapsedTime;
 	
-	sf::RenderWindow renderWindow(SF::VideoMode(width*scale, height*scale), "moonstone");
+	RenderSystem renderSystem(512, 256, 2, renderWindow);	//	move to Moonstone class later, have it return the renderWindow
 	
-	renderWindow.setVerticalSyncEnabled(true);
+	while(renderWindow->isOpen()) {
 	
-	while(renderWindow.isOpen()) {
-	
-		while(renderWindow.pollEvent(event)) {
+		while(renderWindow->pollEvent(event)) {
 			
 			if(event.type == sf::Event::Closed) {
-				renderWindow.close();
+				renderWindow->close();
 			}
 			
 		}
 		
 		elapsedTime = clock.restart().asSeconds();
 		
-		renderWindow.clear(sf::Color::Black);
-		
-		//	draw your junk here
-		
-		renderWindow.display();
+		renderSystem.Update(elapsedTime);	//	draws all of the junk
 	
 	}
 

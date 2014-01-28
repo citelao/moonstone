@@ -5,7 +5,7 @@
 
 #include "AnimationSequenceComponent.h"
 
-AnimationSequenceComponent::AnimationSequence(std::string path, int frameNum, float speed) {
+AnimationSequenceComponent::AnimationSequenceComponent(std::string path, int frameNum, float speed) {
 
     frameCount = frameNum;
     frameLength = speed;

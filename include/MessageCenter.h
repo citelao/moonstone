@@ -9,8 +9,8 @@ class MessageCenter {
 
 	public:
 	
-		addObserver(std::string message, void (*function)(void));
-		notify(std::string message, std::vector<int> args);	//	figure out better args system
+		AddObserver(std::string message, void (*function)(void));
+		Notify(std::string message, std::vector<int> args);	//	figure out better args system
 		
 	private:
 	

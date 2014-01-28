@@ -7,9 +7,9 @@
 #include <string>
 #include <map>
 
-#include "AnimationSequenceComponent"
+#include "AnimationSequenceComponent.h"
 
-class Render : Component {
+class RenderComponent : Component {
 
 	public:
 		
@@ -27,4 +27,4 @@ class Render : Component {
 		
 };
 
-#endif // RENDER_H_INCLUDED
+#endif // RENDERCOMPONENT_H_INCLUDED
