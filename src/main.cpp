@@ -12,7 +12,7 @@ int main() {
 	sf::Event event;
 	float elapsedTime;
 	
-	RenderSystem renderSystem(512, 256, 2, renderWindow);	//	move to Moonstone class later, have it return the renderWindow
+	RenderSystem renderSystem(512, 256, 2, renderWindow);	//	move to Moonstone class later
 	
 	while(renderWindow->isOpen()) {
 	
