@@ -1,7 +1,9 @@
 package Moonstone;
 
-import java.util.*;
 import Moonstone.systems.*;
+import Moonstone.components.*;
+import java.util.*;
+import static java.lang.System.out;
 
 //	base engine class, keeps track of systems, and handles entities
 
@@ -74,7 +76,7 @@ public class Moonstone {
 	
 	
 	public static void main(String[] args) {
-		
+		out.println("moonstone");
 	}
 	
 }
