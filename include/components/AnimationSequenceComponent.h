@@ -21,7 +21,7 @@ class AnimationSequenceComponent : Component {
 
         AnimationSequence(std::string path, int frameNum, float speed);    // path starts at 0, steps up from there
         void Update(float elapsedTime);
-        void Draw(sf::RenderWindow *app);
+        void Draw(sf::RenderWindow *renderWindow);
         void Stop();
         void Play();
         void Restart();

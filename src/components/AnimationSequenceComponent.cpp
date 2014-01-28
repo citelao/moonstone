@@ -47,9 +47,9 @@ void AnimationSequenceComponent::Update(float elapsedTime) {
 
 }
 
-void AnimationSequenceComponent::Draw(sf::RenderWindow *app) {
+void AnimationSequenceComponent::Draw(sf::RenderWindow *renderWindow) {
     sprite.setPosition(x, y);
-    app->draw(sprite);
+    renderWindow->draw(sprite);
 }
 
 void AnimationSequenceComponent::Stop() {

@@ -18,7 +18,7 @@ class Render : Component {
 		
 		Render(int xPos, int yPos);
 		void Update(float elapsedTime);
-		void Draw(sf::RenderWindow *app);
+		void Draw(sf::RenderWindow *renderWindow);
 
 	private:
 	

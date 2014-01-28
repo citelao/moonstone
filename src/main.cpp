@@ -8,25 +8,25 @@ int main() {
 	sf::Clock clock;
 	float elapsedTime;
 	
-	sf::RenderWindow app(SF::VideoMode(width*scale, height*scale), "moonstone");
+	sf::RenderWindow renderWindow(SF::VideoMode(width*scale, height*scale), "moonstone");
 	
-	app.setVerticalSyncEnabled(true);
+	renderWindow.setVerticalSyncEnabled(true);
 	
-	while(app.isOpen()) {
+	while(renderWindow.isOpen()) {
 	
-		while(app.pollEvent(event)) {
+		while(renderWindow.pollEvent(event)) {
 			
 			if(event.type == sf::Event::Closed) {
-				app.close();
+				renderWindow.close();
 			}
 			
 		}
 		
 		elapsedTime = clock.restart().asSeconds();
 		
-		app.clear(sf::Color::Black);
+		renderWindow.clear(sf::Color::Black);
 		
-		app.display();
+		renderWindow.display();
 	
 	}
 
