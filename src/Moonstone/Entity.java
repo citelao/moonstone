@@ -2,6 +2,8 @@ package Moonstone;
 
 import java.util.*;
 
+//contains components and belongs to systems
+
 public class Entity {
 
 	public int id;

@@ -2,6 +2,8 @@ package Moonstone;
 
 import java.util.*;
 
+//	base engine class, keeps track of systems, and handles entities
+
 public class Moonstone {
 	
 	private int entityId = 0;
