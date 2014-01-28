@@ -1,4 +1,4 @@
-#include "AnimationSequence.h"
+#include "AnimationSequenceComponent.h"
 
 #include <string>
 #include <vector>

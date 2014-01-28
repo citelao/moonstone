@@ -1,10 +1,12 @@
-#ifndef ANIMATIONSEQUENCE_H
-#define ANIMATIONSEQUENCE_H
+#ifndef ANIMATIONSEQUENCE_H_INCLUDED
+#define ANIMATIONSEQUENCE_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
 
 #include <string>
 #include <vector>
+
+#include "Component.h"
 
 class AnimationSequenceComponent : Component {
 

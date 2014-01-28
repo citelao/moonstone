@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "AnimationSequenceComponent"
+
 #include <vector>
 #include <string>
 #include <map>
@@ -20,8 +22,8 @@ class Render : Component {
 
 	private:
 	
-		std::map<std::string, AnimationSequence*> animations;
-        typedef std::map<std::string, AnimationSequence*>::iterator i_animations;
+		std::map<std::string, AnimationSequenceComponent*> animations;
+        typedef std::map<std::string, AnimationSequenceComponent*>::iterator i_animations;
 		
 };
 
