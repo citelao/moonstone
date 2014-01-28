@@ -1,5 +1,7 @@
 package Moonstone;
 
+import static java.lang.System.out;
+
 import java.util.*;
 
 //basic system, acts on entities, and their components, contains map of entities within them
@@ -15,7 +17,10 @@ public class System {
 	
 	//	update entities in the system
 	public void Update(float elapsedTime) {
-		
+		for(Map.Entry<Integer, Entity> entityEntry : entities.entrySet()) {
+			Entity entity = entityEntry.getValue();
+			//	update the entity
+		}
 	}
 	
 	public String toString() {

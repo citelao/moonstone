@@ -14,6 +14,14 @@ public class Moonstone {
 	private Map<String, System> systems = new HashMap<String, System>();
 	private Map<Integer, Entity> entities = new HashMap<Integer, Entity>();
 	
+	//	update systems
+	public void Update(float elapsedTime) {
+		for(Map.Entry<String, System> systemEntry : systems.entrySet()) {
+			System system = systemEntry.getValue();
+			system.Update(elapsedTime);
+		}
+	}
+	
 	//	add a system to the engine
 	public void AddSystem(System sys) {
 		systems.put(sys.toString(), sys);
@@ -25,7 +33,7 @@ public class Moonstone {
 	}
 	
 	//	creates an entity
-	public void SpawnEntity(List<Component> components) {
+	public void SpawnEntity(Component... components) {	
 		int id = entityId;
 		Entity tempEnt = new Entity(id);
 		entities.put(id, tempEnt);
@@ -47,7 +55,7 @@ public class Moonstone {
 	
 	
 	//	attaches multiple components to an entity
-	public void AttachComponents(int id, List<Component> components) {
+	public void AttachComponents(int id, Component... components) {
 		for(Component component : components) {
 			entities.get(id).components.put(component.toString(), component);
 		}
@@ -76,7 +84,15 @@ public class Moonstone {
 	
 	
 	public static void main(String[] args) {
-		out.println("moonstone");
+		Moonstone engine = new Moonstone();
+		
+		//	this works! c:
+		engine.AddSystem(new RenderSystem());
+		engine.SpawnEntity(new RenderComponent(0f, 0f));
+		
+		engine.Update(0);
+		
+		out.println("moonstone terminated");
 	}
 	
 }

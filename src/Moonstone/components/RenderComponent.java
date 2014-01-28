@@ -6,8 +6,8 @@ import Moonstone.systems.*;
 public class RenderComponent extends Component {
 
 	public float x, y;
-	
-	void RenderComponent(float x, float y) {
+
+	public RenderComponent(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
