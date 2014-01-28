@@ -19,7 +19,7 @@ class RenderComponent : Component {
 		float x, y;
 		sf::Sprite sprite;
 		
-		Render(int xPos, int yPos);
+		RenderComponent(float xPos, float yPos);
 		void Update(float elapsedTime);
 		void Draw(sf::RenderWindow *renderWindow);
 
