@@ -1,9 +1,9 @@
 #ifndef SYSTEM_H_INCLUDED
 #define SYSTEM_H_INCLUDED
 
-#include "Entity.h"
-
 #include <map>
+
+#include "Entity.h"
 
 class System {
 	

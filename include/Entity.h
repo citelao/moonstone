@@ -1,10 +1,10 @@
 #ifndef ENTITY_H_INCLUDED
 #define ENTITY_H_INCLUDED
 
-#include "Component.h"
-
 #include <string>
 #include <map>
+
+#include "Component.h"
 
 class Entity {
 

@@ -3,11 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "AnimationSequenceComponent"
-
 #include <vector>
 #include <string>
 #include <map>
+
+#include "AnimationSequenceComponent"
 
 class Render : Component {
 

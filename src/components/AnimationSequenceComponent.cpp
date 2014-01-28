@@ -1,9 +1,9 @@
-#include "AnimationSequenceComponent.h"
-
 #include <string>
 #include <vector>
 #include <iostream>
 #include <sstream>
+
+#include "AnimationSequenceComponent.h"
 
 AnimationSequenceComponent::AnimationSequence(std::string path, int frameNum, float speed) {
 
