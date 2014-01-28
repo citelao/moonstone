@@ -6,17 +6,17 @@ public class Moonstone {
 	
 	private int entityId = 0;
 	
-	private List<System> systems = new ArrayList<System>();
+	private Map<String, System> systems = new HashMap<String, System>();
 	private Map<Integer, Entity> entities = new HashMap<Integer, Entity>();
 	
 	//	add a system to the engine
 	public void AddSystem(System sys) {
-		systems.add(sys);
+		systems.put(sys.toString(), sys);
 	}
 	
 	//	remove a system from the engine
 	public void RemoveSystem(String sys) {
-		
+		systems.remove(sys);
 	}
 	
 	//	creates an entity
@@ -26,8 +26,8 @@ public class Moonstone {
 		return tempEnt;
 	}
 	
-	public void AttachComponent() {
-		
+	public void AttachComponent(int id, Component component) {
+		entities.get(id).components.put(component.toString(), component);
 	}
 	
 	
