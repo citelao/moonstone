@@ -59,7 +59,7 @@ public class Moonstone {
 		entities.remove(id);
 	}
 	
-	//	attaches multiple components to an entity
+	//	attaches components to an entity
 	public void AttachComponents(int id, Component... components) {
 		for(Component component : components) {
 			entities.get(id).components.put(component.toString(), component);
@@ -67,7 +67,7 @@ public class Moonstone {
 		CheckEntitySystems(id);
 	}
 	
-	//	detaches multiple components from an entity
+	//	detaches components from an entity
 	public void DetachComponents(int id, String... components) {
 		for(String component : components) {
 			if(entities.get(id).components.containsKey(component)) {
@@ -92,11 +92,11 @@ public class Moonstone {
 			
 			if(fitsSystem && !system.entities.containsKey(id)) {
 				system.entities.put(id, entities.get(id));
-				out.println("entity added to system");
+				out.println("entity " + String.valueOf(id) + " added to " + system.toString());
 			}
 			else if(!fitsSystem && system.entities.containsKey(id)) {
 				system.entities.remove(id);
-				out.println("entity removed from system");
+				out.println("entity " + String.valueOf(id) +" removed from " + system.toString());
 			}
 		}
 		
