@@ -33,7 +33,7 @@ public class Moonstone {
 	}
 	
 	//	creates an entity
-	public void SpawnEntity(Component... components) {	
+	public int SpawnEntity(Component... components) {	
 		int id = entityId;
 		Entity tempEnt = new Entity(id);
 		entities.put(id, tempEnt);
@@ -45,7 +45,7 @@ public class Moonstone {
 		CheckEntitySystems(id);
 		
 		entityId++;
-		//return tempEnt;	//	if we want to return the entity as an object
+		return tempEnt.id;	//	if we want to return the entity as an object
 	}
 	
 	//	removes an entity from all systems and the global entity list
@@ -123,10 +123,13 @@ public class Moonstone {
 		
 		//	this works! c:
 		engine.AddSystem(new RenderSystem());
-		engine.SpawnEntity(new RenderComponent(0f, 0f));
-		engine.SpawnEntity(new RenderComponent(2f, 5f));
-		engine.SpawnEntity(new RenderComponent(2f, 7.3f));
-		engine.DetachComponent(0, "RenderComponent");
+		
+		int test0 = engine.SpawnEntity(new RenderComponent(0f, 0f));
+		int test1 = engine.SpawnEntity();
+		int test2 = engine.SpawnEntity(new RenderComponent(2f, 7.3f));
+		
+		engine.DetachComponent(test0, "RenderComponent");
+		engine.AttachComponent(test1, new RenderComponent(0f, 4f));
 		
 		engine.Update(0);
 		
