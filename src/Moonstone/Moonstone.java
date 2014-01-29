@@ -59,25 +59,10 @@ public class Moonstone {
 		entities.remove(id);
 	}
 	
-	//	attaches a component to an entity
-	public void AttachComponent(int id, Component component) {
-		entities.get(id).components.put(component.toString(), component);
-		CheckEntitySystems(id);
-	}
-	
-	
 	//	attaches multiple components to an entity
 	public void AttachComponents(int id, Component... components) {
 		for(Component component : components) {
 			entities.get(id).components.put(component.toString(), component);
-		}
-		CheckEntitySystems(id);
-	}
-	
-	//	detaches a component from an entity
-	public void DetachComponent(int id, String component) {
-		if(entities.get(id).components.containsKey(component)) {
-			entities.get(id).components.remove(component);
 		}
 		CheckEntitySystems(id);
 	}
@@ -128,8 +113,8 @@ public class Moonstone {
 		int test1 = engine.SpawnEntity();
 		int test2 = engine.SpawnEntity(new RenderComponent(2f, 7.3f));
 		
-		engine.DetachComponent(test0, "RenderComponent");
-		engine.AttachComponent(test1, new RenderComponent(0f, 4f));
+		engine.DetachComponents(test0, "RenderComponent");
+		engine.AttachComponents(test1, new RenderComponent(0f, 4f));
 		
 		engine.Update(0);
 		
