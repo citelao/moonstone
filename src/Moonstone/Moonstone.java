@@ -51,6 +51,7 @@ public class Moonstone {
 	//	attaches a component to an entity
 	public void AttachComponent(int id, Component component) {
 		entities.get(id).components.put(component.toString(), component);
+		CheckEntitySystems(id);
 	}
 	
 	
@@ -59,6 +60,7 @@ public class Moonstone {
 		for(Component component : components) {
 			entities.get(id).components.put(component.toString(), component);
 		}
+		CheckEntitySystems(id);
 	}
 	
 	//	check an entity for what systems it should be in based on its components, and assign it to those systems
@@ -77,6 +79,7 @@ public class Moonstone {
 			
 			if(inSystem) {
 				system.entities.put(id, entities.get(id));
+				out.println("entity added to system");
 			}
 		}
 		
@@ -89,6 +92,7 @@ public class Moonstone {
 		//	this works! c:
 		engine.AddSystem(new RenderSystem());
 		engine.SpawnEntity(new RenderComponent(0f, 0f));
+		engine.SpawnEntity(new RenderComponent(2f, 5f));
 		
 		engine.Update(0);
 		
