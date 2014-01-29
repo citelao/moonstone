@@ -48,6 +48,17 @@ public class Moonstone {
 		//return tempEnt;	//	if we want to return the entity as an object
 	}
 	
+	//	removes an entity from all systems and the global entity list
+	public void DestroyEntity(int id) {
+		for(Map.Entry<String, System> systemEntry : systems.entrySet()) {
+			System system = systemEntry.getValue();
+			if(system.entities.containsKey(id)) {
+				system.entities.remove(id);
+			}
+		}
+		entities.remove(id);
+	}
+	
 	//	attaches a component to an entity
 	public void AttachComponent(int id, Component component) {
 		entities.get(id).components.put(component.toString(), component);
@@ -63,23 +74,44 @@ public class Moonstone {
 		CheckEntitySystems(id);
 	}
 	
-	//	check an entity for what systems it should be in based on its components, and assign it to those systems
+	//	detaches a component from an entity
+	public void DetachComponent(int id, String component) {
+		if(entities.get(id).components.containsKey(component)) {
+			entities.get(id).components.remove(component);
+		}
+		CheckEntitySystems(id);
+	}
+	
+	//	detaches multiple components from an entity
+	public void DetachComponents(int id, String... components) {
+		for(String component : components) {
+			if(entities.get(id).components.containsKey(component)) {
+				entities.get(id).components.remove(component);
+			}
+		}
+		CheckEntitySystems(id);
+	}
+	
+	//	check an entity for what systems it should be in based on its components, and assign it to or remove it from those systems
 	public void CheckEntitySystems(int id) {
 		
 		for(Map.Entry<String, System> systemEntry : systems.entrySet()) {
 			System system = systemEntry.getValue();
-			boolean inSystem = true;
+			boolean fitsSystem = true;
 			
-			for(Map.Entry<String, Component> componentEntry : entities.get(id).components.entrySet()) {
-				Component component = componentEntry.getValue();
-				if(!system.componentList.contains(component.toString())) {
-					inSystem = false;
+			for(String component : system.componentList) {
+				if(!entities.get(id).components.containsKey(component)) {
+					fitsSystem = false;
 				}
 			}
 			
-			if(inSystem) {
+			if(fitsSystem && !system.entities.containsKey(id)) {
 				system.entities.put(id, entities.get(id));
 				out.println("entity added to system");
+			}
+			else if(!fitsSystem && system.entities.containsKey(id)) {
+				system.entities.remove(id);
+				out.println("entity removed from system");
 			}
 		}
 		
@@ -93,6 +125,8 @@ public class Moonstone {
 		engine.AddSystem(new RenderSystem());
 		engine.SpawnEntity(new RenderComponent(0f, 0f));
 		engine.SpawnEntity(new RenderComponent(2f, 5f));
+		engine.SpawnEntity(new RenderComponent(2f, 7.3f));
+		engine.DetachComponent(0, "RenderComponent");
 		
 		engine.Update(0);
 		
