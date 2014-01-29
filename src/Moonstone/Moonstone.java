@@ -45,7 +45,7 @@ public class Moonstone {
 		CheckEntitySystems(id);
 		
 		entityId++;
-		return tempEnt.id;	//	if we want to return the entity as an object
+		return tempEnt.id;	//	if we want to return the entity as an int
 	}
 	
 	//	removes an entity from all systems and the global entity list
