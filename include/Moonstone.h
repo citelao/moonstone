@@ -9,14 +9,12 @@
 #include "Entity.h"
 #include "Component.h"
 
-typedef int EntityID;
-
 class Moonstone {
 
 	public:
 		void Update(float elapsedTime);
 		
-		void AddSystem(System sys);
+		void AddSystem(System *sys);
 		void RemoveSystem(String sys);
 		
 		EntityID SpawnEntity(std::vector<Component*> components);
@@ -29,8 +27,8 @@ class Moonstone {
 				
 	private:
 		EntityID nextID = 0;
-		std::map<std::string, System> systems;
-		std::map<EntityID, Entity> entities;
+		std::map<std::string, System*> systems;
+		std::map<EntityID, Entity*> entities;
 		
 		void CheckEntitySystems(int id);
 		
