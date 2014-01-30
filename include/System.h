@@ -19,4 +19,4 @@ class System {
 
 };
 
-#endif // System_H
+#endif // SYSTEM_H

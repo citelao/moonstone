@@ -6,5 +6,5 @@ void System::Update(float elapsedTime) {
 }
 
 std::string System::ToString() {
-    return "System"; // kinda lame, but what can you do?
+    return "System"; // frick this shiz find a better frickin way
 }

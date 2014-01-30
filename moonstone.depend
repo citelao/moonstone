@@ -30,17 +30,27 @@
 	"Entity.h"
 	"Component.h"
 
-1391060817 c:\users\sam\documents\projects\github\moonstone\include\system.h
+1391062170 c:\users\sam\documents\projects\github\moonstone\include\system.h
 	<map>
 	<vector>
 	<string>
 	"Entity.h"
 	"Component.h"
 
-1391059151 source:c:\users\sam\documents\projects\github\moonstone\src\moonstone.cpp
+1391061160 source:c:\users\sam\documents\projects\github\moonstone\src\moonstone.cpp
 	"Moonstone.h"
 
-1391059240 source:c:\users\sam\documents\projects\github\moonstone\src\system.cpp
+1391061845 source:c:\users\sam\documents\projects\github\moonstone\src\system.cpp
 	<string>
 	"System.h"
+
+1391062298 source:c:\users\sam\documents\projects\github\moonstone\src\components\rendercomponent.cpp
+	<map>
+	<string>
+	"RenderComponent.h"
+
+1391062388 c:\users\sam\documents\projects\github\moonstone\include\components\rendercomponent.h
+	<map>
+	<string>
+	"Component.h"
 
