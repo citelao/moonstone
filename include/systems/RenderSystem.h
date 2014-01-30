@@ -12,7 +12,7 @@
 
 #include "RenderComponent.h"
 
-class RenderSystem : System {
+class RenderSystem : public System {
 
     public:
         RenderSystem();

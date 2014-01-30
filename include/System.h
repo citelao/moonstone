@@ -15,8 +15,8 @@ class System {
 		std::map<EntityID, Entity*> entities;
 		std::vector<std::string> componentList;
 
-		void Update(float elapsedTime);
-		std::string ToString();
+		virtual void Update(float elapsedTime);
+        virtual std::string ToString();
 
 };
 

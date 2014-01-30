@@ -8,7 +8,7 @@
 class Component {
 
 	public:
-		std::string ToString();
+		virtual std::string ToString();
 
 };
 

@@ -1,30 +1,32 @@
 # depslib dependency file v1.0
-1391058363 source:c:\users\sam\documents\projects\github\moonstone\src\component.cpp
+1391062757 source:c:\users\sam\documents\projects\github\moonstone\src\component.cpp
+	<iostream>
 	<string>
 	"Component.h"
 
-1391062753 c:\users\sam\documents\projects\github\moonstone\include\component.h
+1391063806 c:\users\sam\documents\projects\github\moonstone\include\component.h
 	<iostream>
 	<map>
 	<string>
 
-1391059406 source:c:\users\sam\documents\projects\github\moonstone\src\entity.cpp
+1391062751 source:c:\users\sam\documents\projects\github\moonstone\src\entity.cpp
 	"Entity.h"
+	<iostream>
 	<map>
 	<string>
 	<sstream>
 	"Component.h"
 
-1391062749 c:\users\sam\documents\projects\github\moonstone\include\entity.h
+1391063800 c:\users\sam\documents\projects\github\moonstone\include\entity.h
 	<iostream>
 	<map>
 	<string>
 	"Component.h"
 
-1391058624 source:c:\users\sam\documents\projects\github\moonstone\src\main.cpp
+1391063942 source:c:\users\sam\documents\projects\github\moonstone\src\main.cpp
 	"Moonstone.h"
 
-1391062726 c:\users\sam\documents\projects\github\moonstone\include\moonstone.h
+1391064170 c:\users\sam\documents\projects\github\moonstone\include\moonstone.h
 	<iostream>
 	<vector>
 	<map>
@@ -32,8 +34,10 @@
 	"System.h"
 	"Entity.h"
 	"Component.h"
+	"RenderSystem.h"
+	"RenderComponent.h"
 
-1391062740 c:\users\sam\documents\projects\github\moonstone\include\system.h
+1391063793 c:\users\sam\documents\projects\github\moonstone\include\system.h
 	<iostream>
 	<map>
 	<vector>
@@ -41,20 +45,39 @@
 	"Entity.h"
 	"Component.h"
 
-1391061160 source:c:\users\sam\documents\projects\github\moonstone\src\moonstone.cpp
+1391064162 source:c:\users\sam\documents\projects\github\moonstone\src\moonstone.cpp
+	<iostream>
 	"Moonstone.h"
 
-1391061845 source:c:\users\sam\documents\projects\github\moonstone\src\system.cpp
+1391062746 source:c:\users\sam\documents\projects\github\moonstone\src\system.cpp
+	<iostream>
 	<string>
 	"System.h"
 
-1391062298 source:c:\users\sam\documents\projects\github\moonstone\src\components\rendercomponent.cpp
+1391062775 source:c:\users\sam\documents\projects\github\moonstone\src\components\rendercomponent.cpp
+	<iostream>
 	<map>
 	<string>
 	"RenderComponent.h"
 
-1391062388 c:\users\sam\documents\projects\github\moonstone\include\components\rendercomponent.h
+1391063508 c:\users\sam\documents\projects\github\moonstone\include\components\rendercomponent.h
+	<iostream>
 	<map>
 	<string>
 	"Component.h"
+
+1391063321 source:c:\users\sam\documents\projects\github\moonstone\src\systems\rendersystem.cpp
+	<iostream>
+	"RenderSystem.h"
+	"RenderComponent.h"
+
+1391063502 c:\users\sam\documents\projects\github\moonstone\include\systems\rendersystem.h
+	<iostream>
+	<map>
+	<vector>
+	<string>
+	"Entity.h"
+	"Component.h"
+	"System.h"
+	"RenderComponent.h"
 

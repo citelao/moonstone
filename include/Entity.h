@@ -16,7 +16,7 @@ class Entity {
 		std::map<std::string, Component*> components;
 
 		Entity(EntityID id);
-		std::string ToString();
+		virtual std::string ToString();
 
 };
 

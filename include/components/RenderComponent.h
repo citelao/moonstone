@@ -7,7 +7,7 @@
 
 #include "Component.h"
 
-class RenderComponent : Component {
+class RenderComponent : public Component {
 
 	public:
 	    float x, y;

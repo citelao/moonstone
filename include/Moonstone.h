@@ -10,6 +10,9 @@
 #include "Entity.h"
 #include "Component.h"
 
+#include "RenderSystem.h"
+#include "RenderComponent.h"
+
 class Moonstone {
 
 	public:
@@ -18,6 +21,8 @@ class Moonstone {
 		void AddSystem(System *sys);
 		void RemoveSystem(std::string sys);
 
+        EntityID SpawnEntity();
+        EntityID SpawnEntity(Component *components);
 		EntityID SpawnEntity(std::vector<Component*> components);
 		void DestroyEntity(EntityID id);
 

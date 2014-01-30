@@ -12,10 +12,34 @@ void Moonstone::Update(float elapsedTime) {
 
 void Moonstone::AddSystem(System *sys) {
 	systems[sys->ToString()] = sys;
+	std::cout << sys->ToString() << " added" << std::endl;
 }
 
 void Moonstone::RemoveSystem(std::string sys) {
 	systems.erase(sys);
+	std::cout << sys << " removed" << std::endl;
+}
+
+EntityID Moonstone::SpawnEntity() {
+    EntityID id = nextID;
+    Entity *tempEnt = new Entity(id);
+    entities[id] = tempEnt;
+
+    nextID++;
+    return id;
+}
+
+EntityID Moonstone::SpawnEntity(Component *component) {
+    EntityID id = nextID;
+    Entity *tempEnt = new Entity(id);
+    entities[id] = tempEnt;
+
+    entities[id]->components[component->ToString()] = component;
+
+	CheckEntitySystems(id);
+
+	nextID++;
+	return id;
 }
 
 EntityID Moonstone::SpawnEntity(std::vector<Component*> components) {
@@ -85,9 +109,11 @@ void Moonstone::CheckEntitySystems(EntityID id) {
 
         if(fitsSystem && !system->entities.count(id)) {
             system->entities[id] = entities[id];
+            std::cout << id << " added to " << system->ToString() << std::endl;
         }
         else if(!fitsSystem && system->entities.count(id)) {
             system->entities.erase(id);
+            std::cout << id << " removed from " << system->ToString() << std::endl;
         }
     }
 
