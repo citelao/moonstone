@@ -22,8 +22,8 @@ class Moonstone {
 
 		void AttachComponents(EntityID id, Component *component);
 		void AttachComponents(EntityID id, std::vector<Component*> components);
-		void DetachComponents(EntityID id, Component *component);
-		void DetachComponents(EntityID id, std::vector<Component*> components);
+		void DetachComponents(EntityID id, std::string component);
+		void DetachComponents(EntityID id, std::vector<std::string> components);
 
 	private:
 		EntityID nextID = 0;

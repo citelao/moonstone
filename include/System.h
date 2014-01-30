@@ -12,7 +12,7 @@ class System {
 
 	public:
 		std::map<EntityID, Entity*> entities;
-		std::vector<std::string> components;
+		std::vector<std::string> componentList;
 
 		void Update(float elapsedTime);
 		std::string ToString();
