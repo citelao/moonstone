@@ -23,7 +23,7 @@
 	<string>
 	"Component.h"
 
-1391063942 source:c:\users\sam\documents\projects\github\moonstone\src\main.cpp
+1391064248 source:c:\users\sam\documents\projects\github\moonstone\src\main.cpp
 	"Moonstone.h"
 
 1391064170 c:\users\sam\documents\projects\github\moonstone\include\moonstone.h
@@ -66,7 +66,7 @@
 	<string>
 	"Component.h"
 
-1391063321 source:c:\users\sam\documents\projects\github\moonstone\src\systems\rendersystem.cpp
+1391064425 source:c:\users\sam\documents\projects\github\moonstone\src\systems\rendersystem.cpp
 	<iostream>
 	"RenderSystem.h"
 	"RenderComponent.h"
