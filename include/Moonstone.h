@@ -1,6 +1,7 @@
 #ifndef MOONSTONE_H
 #define MOONSTONE_H
 
+#include <iostream>
 #include <vector>
 #include <map>
 #include <string>

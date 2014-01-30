@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Moonstone.h"
 
 void Moonstone::Update(float elapsedTime) {

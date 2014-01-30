@@ -1,6 +1,7 @@
 #ifndef RENDERCOMPONENT_H
 #define RENDERCOMPONENT_H
 
+#include <iostream>
 #include <map>
 #include <string>
 

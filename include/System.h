@@ -1,6 +1,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#include <iostream>
 #include <map>
 #include <vector>
 #include <string>

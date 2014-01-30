@@ -1,6 +1,7 @@
 #ifndef RENDERSYSTEM_H
 #define RENDERSYSTEM_H
 
+#include <iostream>
 #include <map>
 #include <vector>
 #include <string>
