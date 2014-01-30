@@ -11,6 +11,7 @@ Entity::Entity(EntityID id) {
 }
 
 std::string Entity::ToString() {
-    // FIX ME
-    return "";
+    std::stringstream convert;
+    convert << id;
+    return convert.str();
 }
