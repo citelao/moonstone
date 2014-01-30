@@ -4,41 +4,54 @@ void Moonstone::Update(float elapsedTime) {
 	for(auto i_systems : systems) {
 		System *system = i_systems.second;
 		system->Update(elapsedTime);
+		//system->Update(elapsedTime);
 	}
 }
 
-void AddSystem(System *sys) {
-	systems[sys->toString(), sys);
+void Moonstone::AddSystem(System *sys) {
+	systems[sys->ToString()] = sys;
 }
 
-void RemoveSystem(String sys) {
+void Moonstone::RemoveSystem(std::string sys) {
 	systems.erase(sys);
 }
-		
-EntityID SpawnEntity(std::vector<Component*> components) {
-	
+
+EntityID Moonstone::SpawnEntity(std::vector<Component*> components) {
+    EntityID id = nextID;
+    Entity *tempEnt = new Entity(id);
+    entities[id] = tempEnt;
+
+	for(auto component : components) {
+        entities[id]->components[component->ToString()] = component;
+	}
+
+	CheckEntitySystems(id);
+
+	nextID++;
+	return id;
 }
 
-void DestroyEntity(EntityID id) {
-	
-}
-		
-void AttachComponents(EntityID id, Component *component) {
-	
+void Moonstone::DestroyEntity(EntityID id) {
+    entities.erase(id);
+
 }
 
-void AttachComponents(EntityID id, std::vector<Component*> components) {
-	
+void Moonstone::AttachComponents(EntityID id, Component *component) {
+
 }
 
-void DetachComponents(EntityID id, Component *component) {
-	
+void Moonstone::AttachComponents(EntityID id, std::vector<Component*> components) {
+
 }
 
-void DetachComponents(EntityID id, std::vector<Component*> components) {
-	
+void Moonstone::DetachComponents(EntityID id, Component *component) {
+
 }
 
-void CheckEntitySystems(int id) {
-	
+void Moonstone::DetachComponents(EntityID id, std::vector<Component*> components) {
+
+}
+
+void Moonstone::CheckEntitySystems(EntityID id) {
+
 }

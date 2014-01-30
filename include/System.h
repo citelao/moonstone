@@ -9,14 +9,14 @@
 #include "Component.h"
 
 class System {
-	
+
 	public:
 		std::map<EntityID, Entity*> entities;
-		std::vector<String> components;
-	
+		std::vector<std::string> components;
+
 		void Update(float elapsedTime);
-		std::string toString();
-		
+		std::string ToString();
+
 };
 
 #endif // System_H

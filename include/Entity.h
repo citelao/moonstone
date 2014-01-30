@@ -13,11 +13,9 @@ class Entity {
 	public:
 		EntityID id;
 		std::map<std::string, Component*> components;
-		
+
 		Entity(EntityID id);
-		std::string toString();
-	
-	private:
+		std::string ToString();
 
 };
 

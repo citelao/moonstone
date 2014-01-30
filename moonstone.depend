@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1391058363 source:c:\users\sam\documents\projects\github\moonstone\src\component.cpp
+	<string>
+	"Component.h"
+
+1391056613 c:\users\sam\documents\projects\github\moonstone\include\component.h
+	<map>
+	<string>
+
+1391058569 source:c:\users\sam\documents\projects\github\moonstone\src\entity.cpp
+	"Entity.h"
+	<map>
+	<string>
+	<sstream>
+	"Component.h"
+
+1391040366 c:\users\sam\documents\projects\github\moonstone\include\entity.h
+	<map>
+	<string>
+	"Component.h"
+
+1391058624 source:c:\users\sam\documents\projects\github\moonstone\src\main.cpp
+	"Moonstone.h"
+
+1391058511 c:\users\sam\documents\projects\github\moonstone\include\moonstone.h
+	<vector>
+	<map>
+	<string>
+	"System.h"
+	"Entity.h"
+	"Component.h"
+
+1391058504 c:\users\sam\documents\projects\github\moonstone\include\system.h
+	<map>
+	<vector>
+	<string>
+	"Entity.h"
+	"Component.h"
+
+1391059151 source:c:\users\sam\documents\projects\github\moonstone\src\moonstone.cpp
+	"Moonstone.h"
+

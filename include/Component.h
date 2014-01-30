@@ -7,7 +7,7 @@
 class Component {
 
 	public:
-		std::string toString();
+		std::string ToString();
 
 };
 
