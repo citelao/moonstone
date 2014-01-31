@@ -4,6 +4,13 @@
 #include <cmath>
 #include <iostream>
 
+/**
+ * Pass a width, height, and seed (optional)
+ * generateMap() generates an heightMap
+ * access heights with getPixelHeight(int x, int y)
+ */
+
+
 class Perlin {
     
     public:
