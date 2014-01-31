@@ -18,7 +18,7 @@ endmacro()
 header_directories(dirs)
 include_directories(${dirs})
 
-# This way is a poor way of sourcing files
-# TODO enforce manual addition of deps
+file(GLOB_RECURSE HEADER_FILES ${PROJECT_SOURCE_DIR}/include/*.h)
+
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-add_executable(Moonstone ${SRC_FILES})
+add_executable(Moonstone ${SRC_FILES} ${HEADER_FILES})
