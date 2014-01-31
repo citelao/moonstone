@@ -1,27 +1,23 @@
-#ifndef SYSTEM_H_INCLUDED
-#define SYSTEM_H_INCLUDED
+#ifndef SYSTEM_H
+#define SYSTEM_H
 
+#include <iostream>
 #include <map>
+#include <vector>
+#include <string>
 
 #include "Entity.h"
-#include "MessageCenter.h"
-
-//	basic system, acts on entities, and their components, contains map of entities within them
+#include "Component.h"
 
 class System {
-	
+
 	public:
-		
-		MessageCenter *postman;	//	have Moonstone hand this off to the new system on init
-		
-		void Update(float elapsedTime);
-		void AddEntity(Entity *entity);
-		void RemoveEntity(int id);
-		
-	private:
-	
-		std::map<int, Entity*> entities;
-	
+		std::map<EntityID, Entity*> entities;
+		std::vector<std::string> componentList;
+
+		virtual void Update(float elapsedTime);
+        virtual std::string ToString();
+
 };
 
-#endif // SYSTEM_H_INCLUDED
+#endif // SYSTEM_H

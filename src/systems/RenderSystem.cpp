@@ -1,27 +1,20 @@
+#include <iostream>
+
 #include "RenderSystem.h"
+#include "RenderComponent.h"
 
-RenderSystem::RenderSystem(int w, int h, int s, sf::RenderWindow *window) {
-
-	width = w;
-	height = h;
-	scale = s;
-
-	window = new sf::RenderWindow(sf::VideoMode(width*scale, height*scale), "moonstone engine");
-	renderWindow = window;
-	
-	camera = new sf::View(sf::FloatRect(0, 0, width, height));
-	
-	renderWindow.setVerticalSyncEnabled(true);
-	renderWindow.setView(camera);
-
+RenderSystem::RenderSystem() {
+    componentList.push_back("RenderComponent");
 }
 
-RenderSystem::Update(float elapsedTime) {
+void RenderSystem::Update(float elapsedTime) {
+    for(auto i_entities : entities) {
+        Entity *entity = i_entities.second;
+        RenderComponent *renderComponent = (RenderComponent*)entity->components["RenderComponent"];
+        std::cout << entity->id << " was updated at (" << renderComponent->x << ", " << renderComponent->y << ")" << std::endl;
+    }
+}
 
-	renderWindow->clear(sf::Color::Black);
-	
-	//	entity updates here
-	
-	renderWindow->display();
-
+std::string RenderSystem::ToString() {
+    return "RenderSystem";  // find better way goddang
 }

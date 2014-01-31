@@ -1,33 +1,20 @@
-#ifndef RENDERCOMPONENT_H_INCLUDED
-#define RENDERCOMPONENT_H_INCLUDED
+#ifndef RENDERCOMPONENT_H
+#define RENDERCOMPONENT_H
 
-#include <SFML/Graphics.hpp>
-
-#include <vector>
-#include <string>
+#include <iostream>
 #include <map>
+#include <string>
 
-#include "AnimationSequenceComponent.h"
+#include "Component.h"
 
-//	component for containing render data
-//	acted on by the render system
-
-class RenderComponent : Component {
+class RenderComponent : public Component {
 
 	public:
-		
-		float x, y;
-		sf::Sprite sprite;
-		
-		RenderComponent(float xPos, float yPos);
-		void Update(float elapsedTime);
-		void Draw(sf::RenderWindow *renderWindow);
+	    float x, y;
 
-	private:
-	
-		std::map<std::string, AnimationSequenceComponent*> animations;
-		typedef std::map<std::string, AnimationSequenceComponent*>::iterator i_animations;
-		
+	    RenderComponent(float x, float y);
+		std::string ToString();
+
 };
 
-#endif // RENDERCOMPONENT_H_INCLUDED
+#endif // RENDERCOMPONENT_H

@@ -1,9 +1,15 @@
-#ifndef COMPONENT_H_INCLUDED
-#define COMPONENT_H_INCLUDED
+#ifndef COMPONENT_H
+#define COMPONENT_H
 
-//	raw data that is attached to an entity, gets controlled by systems
+#include <iostream>
+#include <map>
+#include <string>
 
 class Component {
+
+	public:
+		virtual std::string ToString();
+
 };
 
-#endif // COMPONENT_H_INCLUDED
+#endif // COMPONENT_H

@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# Compiled folders
+/debug
+/release
+
+# Project files
+*.cbp
+*.layout

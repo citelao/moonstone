@@ -1,28 +1,27 @@
-#ifndef RENDERSYSTEM_H_INCLUDED
-#define RENDERSYSTEM_H_INCLUDED
+#ifndef RENDERSYSTEM_H
+#define RENDERSYSTEM_H
 
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
 
-#include "System.h"
 #include "Entity.h"
 #include "Component.h"
+#include "System.h"
+
 #include "RenderComponent.h"
 
-//	main system for rendering
-//	contains the renderWindow, and camera
-//	draws all objects, lighting, UI (may be seperate system that talks to RenderSystem), etc
+class RenderSystem : public System {
 
-class RenderSystem : System {
+    public:
+        RenderSystem();
+        void Update(float elapsedTime);
+        std::string ToString();
 
-	public:
-	
-		int height, width, scale;
-		sf::RenderWindow *renderWindow;
-		sf::View *camera;
-		
-		RenderSystem(int w, int h, int s, sf::RenderWindow *window);
-		void Update(float elapsedTime);	//	seperate draw? no for now.
+    private:
+        void Draw();
 
 };
 
-#endif // RENDERSYSTEM_H_INCLUDED
+#endif // RENDERSYSTEM_H

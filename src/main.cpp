@@ -1,33 +1,16 @@
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-
-#include "System.h"
-#include "RenderSystem.h"
+#include "Moonstone.h"
 
 int main() {
+    Moonstone moonstone;
 
-	sf::RenderWindow *renderWindow;
-	sf::Clock clock;
-	sf::Event event;
-	float elapsedTime;
-	
-	RenderSystem renderSystem(512, 256, 2, renderWindow);	//	move to Moonstone class later
-	
-	while(renderWindow->isOpen()) {
-	
-		while(renderWindow->pollEvent(event)) {
-			
-			if(event.type == sf::Event::Closed) {
-				renderWindow->close();
-			}
-			
-		}
-		
-		elapsedTime = clock.restart().asSeconds();
-		
-		renderSystem.Update(elapsedTime);	//	draws all of the junk
-	
-	}
+    moonstone.AddSystem(new RenderSystem);
 
+    EntityID entity1 = moonstone.SpawnEntity();
+    EntityID entity2 = moonstone.SpawnEntity(new RenderComponent(14.2, 3));
+
+    moonstone.AttachComponents(entity1, new RenderComponent(0, 0));
+    moonstone.DetachComponents(entity2, "RenderComponent");
+
+    moonstone.Update(0.0f);
+	return 0;
 }

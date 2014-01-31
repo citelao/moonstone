@@ -1,29 +1,23 @@
-#ifndef ENTITY_H_INCLUDED
-#define ENTITY_H_INCLUDED
+#ifndef ENTITY_H
+#define ENTITY_H
 
-#include <string>
+#include <iostream>
 #include <map>
+#include <string>
 
 #include "Component.h"
 
-//	contains components and belongs to systems
+typedef int EntityID;
 
 class Entity {
 
 	public:
-	
-		int id;
+		EntityID id;
 		std::map<std::string, Component*> components;
-		
-		Entity(int idNum);
-		
-		void AddComponent(Component *component);
-		void RemoveComponent(std::string name);	// we should figure out a better way to address components
+
+		Entity(EntityID id);
+		virtual std::string ToString();
 
 };
 
-Entity::Entity(int idNum) {
-	id = idNum;
-}
-
-#endif // ENTITY_H_INCLUDED
+#endif // ENTITY_H

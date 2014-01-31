@@ -1,23 +1,14 @@
-#include "RenderComponent"
+#include <iostream>
+#include <map>
+#include <string>
 
-RenderComponent::RenderComponent(float xPos, float yPos) {
+#include "RenderComponent.h"
 
-	x = xPos;
-	y = yPos;
-
+RenderComponent::RenderComponent(float x, float y) {
+    this->x = x;
+    this->y = y;
 }
 
-void RenderComponent::Update(float elapsedTime) {
-
-	for(i_animations = animations.begin(); i_animations != animations.end(); i_animations++) {
-		i_animations->second->Update(elapsedTime);
-	}
-
-}
-
-void RenderComponent::Draw(sf::RenderWindow *renderWindow) {
-
-	//	need logic to figure out which animaion should be drawn??
-	//	like, account for player directions and such to switch animations, etc
-
+std::string RenderComponent::ToString() {
+    return "RenderComponent";
 }
