@@ -22,3 +22,6 @@ file(GLOB_RECURSE HEADER_FILES ${PROJECT_SOURCE_DIR}/include/*.h)
 
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 add_executable(Moonstone ${SRC_FILES} ${HEADER_FILES})
+
+source_group("include" FILES ${HEADER_FILES})
+source_group("src" FILES ${SRC_FILES})
