@@ -9,6 +9,8 @@ Building
 
 We use `cmake` to do all of our work here.
 
+Our `CMakeLists.txt` does not handle SFML linking yet.
+
 ### Compiling ###
 
 1. Open command line at project root
