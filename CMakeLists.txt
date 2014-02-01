@@ -3,25 +3,24 @@ project (moonstone)
 
 add_definitions(-Wno-c++11-extensions)
 
-# http://www.cmake.org/pipermail/cmake/2012-June/050674.html
-macro(header_directories return_list)
-        FILE(GLOB_RECURSE new_list *.h)
-        SET(dir_list "")
-        FOREACH(file_path ${new_list})
-            GET_FILENAME_COMPONENT(dir_path ${file_path} PATH)
-            SET(dir_list ${dir_list} ${dir_path})
-        ENDFOREACH()
-        LIST(REMOVE_DUPLICATES dir_list)
-        SET(${return_list} ${dir_list})
-endmacro()
+# GLOB the files
+file(GLOB_RECURSE HEADER_FILES RELATIVE "${PROJECT_SOURCE_DIR}" ${PROJECT_SOURCE_DIR}/include/*.h)
+file(GLOB_RECURSE SRC_FILES RELATIVE "${PROJECT_SOURCE_DIR}" ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
-header_directories(dirs)
-include_directories(${dirs})
+# Include all directories
+foreach(CURRENT_FILE ${HEADER_FILES} ${SRC_FILES})
+	get_filename_component(CURRENT_PATH ${CURRENT_FILE} PATH)
+	set(INCLUDE_DIRS ${INCLUDE_DIRS} ${CURRENT_PATH})
+endforeach()
 
-file(GLOB_RECURSE HEADER_FILES ${PROJECT_SOURCE_DIR}/include/*.h)
+include_directories(${INCLUDE_DIRS})
 
-file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 add_executable(Moonstone ${SRC_FILES} ${HEADER_FILES})
 
-source_group("include" FILES ${HEADER_FILES})
-source_group("src" FILES ${SRC_FILES})
+# Create the project directories for the files.
+foreach(CURRENT_FILE ${HEADER_FILES} ${SRC_FILES})
+	get_filename_component(CURRENT_PATH ${CURRENT_FILE} PATH)
+	get_filename_component(CURRENT_NAME ${CURRENT_FILE} NAME)
+	string(REPLACE "/" "\\\\" PARSED_PATH ${CURRENT_PATH})
+	source_group(${PARSED_PATH} FILES ${CURRENT_FILE})
+endforeach()
