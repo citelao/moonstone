@@ -108,11 +108,13 @@ void Moonstone::CheckEntitySystems(EntityID id) {
         }
 
         if(fitsSystem && !system->entities.count(id)) {
-            system->entities[id] = entities[id];
+            system->AddEntity(entities[id]);
+            //system->entities[id] = entities[id];
             std::cout << id << " added to " << system->ToString() << std::endl;
         }
         else if(!fitsSystem && system->entities.count(id)) {
-            system->entities.erase(id);
+            system->RemoveEntity(id);
+            //system->entities.erase(id);
             std::cout << id << " removed from " << system->ToString() << std::endl;
         }
     }

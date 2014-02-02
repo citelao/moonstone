@@ -1,3 +1,12 @@
+# Dev folders
+bin/
+obj/
+
+# Project Files
+irr-test.cbp
+irr-test.depend
+irr-test.layout
+
 # Compiled Object files
 *.slo
 *.lo
@@ -11,11 +20,3 @@
 *.lai
 *.la
 *.a
-
-# Compiled folders
-/debug
-/release
-
-# Project files
-*.cbp
-*.layout

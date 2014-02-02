@@ -16,6 +16,8 @@
 class Moonstone {
 
 	public:
+	    bool isRunning = true;
+
 		void Update(float elapsedTime);
 
 		void AddSystem(System *sys);
