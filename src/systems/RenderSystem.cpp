@@ -8,14 +8,16 @@ RenderSystem::RenderSystem() {
     componentList.push_back("RenderComponent");
 
     device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(1024, 768), 16, false, false, false, 0);
-    device->setWindowCaption(L"Moonstone3d Engine");
+    device->setWindowCaption(L"hello tumblr i am not dead");
 
     videoDriver = device->getVideoDriver();
     sceneManager = device->getSceneManager();
     guiEnvironment = device->getGUIEnvironment();
 
-    camera = sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 2, -2), irr::core::vector3df(0, 2, 0));
-
+    //camera = sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 2, -2), irr::core::vector3df(0, 2, 0));
+    camera = sceneManager->addCameraSceneNodeFPS(0, 100.0f, 0.01f, -1, 0, 0, true, 0.f, false, true);
+    camera->setPosition(irr::core::vector3df(0, 1.85, 0));
+    device->getCursorControl()->setVisible(false);
 }
 
 void RenderSystem::AddEntity(Entity *entity) {
@@ -32,7 +34,7 @@ void RenderSystem::AddEntity(Entity *entity) {
         renderComponent->sceneNode->setMD2Animation(irr::scene::EMAT_STAND);
         renderComponent->sceneNode->setMaterialTexture(0, videoDriver->getTexture(renderComponent->textureLocation.c_str()));
         renderComponent->sceneNode->setScale(irr::core::vector3df(renderComponent->meshScale, renderComponent->meshScale, renderComponent->meshScale));
-        std::cout << renderComponent->sceneNode->getTransformedBoundingBox().getCenter().Y << std::endl;
+        //std::cout << renderComponent->sceneNode->getTransformedBoundingBox().getCenter().Y << std::endl;
     }
 
 }
@@ -52,7 +54,7 @@ void RenderSystem::Update(float elapsedTime) {
 
 void RenderSystem::Draw() {
 
-    videoDriver->beginScene(true, true, irr::video::SColor(255,100,101,140));
+    videoDriver->beginScene(true, true, irr::video::SColor(255, 100, 100, 100));
 
     sceneManager->drawAll();
     guiEnvironment->drawAll();
