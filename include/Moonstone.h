@@ -33,6 +33,9 @@ class Moonstone {
 		void DetachComponents(EntityID id, std::string component);
 		void DetachComponents(EntityID id, std::vector<std::string> components);
 
+		System* GetSystem(std::string sys);
+		Entity* GetEntity(EntityID id);
+
 	private:
 		EntityID nextID = 0;
 		std::map<std::string, System*> systems;

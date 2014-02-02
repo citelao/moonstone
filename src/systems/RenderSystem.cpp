@@ -14,7 +14,7 @@ RenderSystem::RenderSystem() {
     sceneManager = device->getSceneManager();
     guiEnvironment = device->getGUIEnvironment();
 
-    camera = sceneManager->addCameraSceneNode(0, irr::core::vector3df(0,30,-40), irr::core::vector3df(0,5,0));
+    camera = sceneManager->addCameraSceneNode(0, irr::core::vector3df(0, 2, -2), irr::core::vector3df(0, 2, 0));
 
 }
 
@@ -27,9 +27,12 @@ void RenderSystem::AddEntity(Entity *entity) {
     renderComponent->sceneNode = sceneManager->addAnimatedMeshSceneNode(renderComponent->mesh);
 
     if(renderComponent->sceneNode) {
+        renderComponent->sceneNode->setPosition(irr::core::vector3df(renderComponent->x, renderComponent->y, renderComponent->z));
         renderComponent->sceneNode->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-        //renderComponent->sceneNode->setMD2Animation(irr::scene::EMAT_STAND);
+        renderComponent->sceneNode->setMD2Animation(irr::scene::EMAT_STAND);
         renderComponent->sceneNode->setMaterialTexture(0, videoDriver->getTexture(renderComponent->textureLocation.c_str()));
+        renderComponent->sceneNode->setScale(irr::core::vector3df(renderComponent->meshScale, renderComponent->meshScale, renderComponent->meshScale));
+        std::cout << renderComponent->sceneNode->getTransformedBoundingBox().getCenter().Y << std::endl;
     }
 
 }

@@ -12,13 +12,14 @@
 class RenderComponent : public Component {
 
 	public:
-	    float x, y;
+	    float x, y, z;
+	    float meshScale;
         irr::scene::IAnimatedMesh *mesh;
         std::string meshLocation;
         std::string textureLocation;
         irr::scene::IAnimatedMeshSceneNode *sceneNode;
 
-	    RenderComponent(float x, float y, std::string meshLocation, std::string textureLocation);
+	    RenderComponent(float x, float y, float z, std::string meshLocation, std::string textureLocation, float meshScale = 1);
 		std::string ToString();
 
 };

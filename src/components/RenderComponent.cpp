@@ -6,9 +6,11 @@
 
 #include "RenderComponent.h"
 
-RenderComponent::RenderComponent(float x, float y, std::string meshLocation, std::string textureLocation) {
+RenderComponent::RenderComponent(float x, float y, float z, std::string meshLocation, std::string textureLocation, float meshScale) {
     this->x = x;
     this->y = y;
+    this->z = z;
+    this->meshScale = meshScale;
     this->meshLocation = meshLocation;
     this->textureLocation = textureLocation;
 }

@@ -120,3 +120,11 @@ void Moonstone::CheckEntitySystems(EntityID id) {
     }
 
 }
+
+System* Moonstone::GetSystem(std::string sys) {
+    return systems[sys];
+}
+
+Entity* Moonstone::GetEntity(EntityID id) {
+    return entities[id];
+}
