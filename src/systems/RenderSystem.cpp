@@ -7,7 +7,8 @@ RenderSystem::RenderSystem() {
 
     componentList.push_back("RenderComponent");
 
-    device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(640, 480), 16, false, false, false, 0);
+    device = irr::createDevice(irr::video::EDT_OPENGL, irr::core::dimension2d<irr::u32>(1024, 768), 16, false, false, false, 0);
+    device->setWindowCaption(L"Moonstone3d Engine");
 
     videoDriver = device->getVideoDriver();
     sceneManager = device->getSceneManager();
@@ -27,7 +28,7 @@ void RenderSystem::AddEntity(Entity *entity) {
 
     if(renderComponent->sceneNode) {
         renderComponent->sceneNode->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-        renderComponent->sceneNode->setMD2Animation(irr::scene::EMAT_STAND);
+        //renderComponent->sceneNode->setMD2Animation(irr::scene::EMAT_STAND);
         renderComponent->sceneNode->setMaterialTexture(0, videoDriver->getTexture(renderComponent->textureLocation.c_str()));
     }
 

@@ -11,7 +11,7 @@ int main() {
     moonstone.AttachComponents(entity1, new RenderComponent(0, 0, "media/sydney.md2", "media/sydney.bmp"));
     //moonstone.DetachComponents(entity2, "RenderComponent");
 
-    while(moonstone.isRunning) {   //  main program loop
+    while(moonstone.isRunning) {
         moonstone.Update(0.0f);
     }
 
