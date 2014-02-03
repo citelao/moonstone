@@ -13,9 +13,9 @@
 *.a
 
 # Compiled folders
-/debug
-/release
+bin/
 
 # Project files
 *.cbp
 *.layout
+*.depend
