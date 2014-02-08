@@ -9,6 +9,7 @@
 #include "System.h"
 #include "Entity.h"
 #include "Component.h"
+#include "MessageCenter.h"
 
 #include "RenderSystem.h"
 #include "RenderComponent.h"
