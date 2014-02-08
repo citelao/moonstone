@@ -2,14 +2,22 @@
 
 #include <iostream>
 
-bool MessageCenter::registerObserver(std::string event, responder a) {
+void MessageCenter::registerObserver(std::string event, responder observer) {
     
     std::cout << "registering " << event << std::endl;
-    (a)(std::vector<void*>());
+
+    std::vector<responder> responders = registeredResponders[event];
     
-    return false;
+    responders.push_back(observer);
+    registeredResponders[event] = responders;
 }
 
 bool MessageCenter::notify(std::string event) {
-    std::cout << "notify" << std::endl;
+    std::cout << "notifying for " << event << std::endl;
+    
+    for(auto observer : registeredResponders[event]) {
+        (observer)(std::vector<void*>());
+    }
+    
+    return false;
 }

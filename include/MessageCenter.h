@@ -12,7 +12,7 @@ typedef void(*responder)(std::vector<void*>);
 
 class MessageCenter {
     public:
-        bool registerObserver(std::string event, responder a);
+        void registerObserver(std::string event, responder observer);
     
         bool notify(std::string event);
     
