@@ -15,7 +15,19 @@
 # Compiled folders
 bin/
 
+# CMake stuff
+CMake*
+!CMakeLists.txt
+cmake_install.cmake
+Makefile
+*build/
+*.depend
+
 # Project files
 *.cbp
 *.layout
 *.depend
+*.xcodeproj
+
+# Dumb Mac stuff
+.DS_STORE
