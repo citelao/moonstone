@@ -1,6 +1,7 @@
 #include "Moonstone.h"
+#include "messaging/Any.h"
 
-void observer(std::vector<void*> unused)
+void observer(std::vector<Any> unused)
 {
     std::cout << "callback" << std::endl;
 }
@@ -9,11 +10,13 @@ int main() {
     Moonstone moonstone;
     MessageCenter postman;
     
+    std::vector<Any> args = std::vector<Any>();
+    args.push_back(new Any());
+    
     postman.registerObserver("eventname", observer);
-    postman.registerObserver("eventname", observer);
-    postman.notify("eventname");
-    postman.notify("eventname");
-    postman.notify("noresponse");
+//    postman.notify("eventname", args);
+//    postman.notify("eventname", args);
+//    postman.notify("noresponse", args);
     
 //    
 //    moonstone.AddSystem(new RenderSystem);

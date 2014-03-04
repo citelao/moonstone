@@ -12,11 +12,11 @@ void MessageCenter::registerObserver(std::string event, responder observer) {
     registeredResponders[event] = responders;
 }
 
-bool MessageCenter::notify(std::string event) {
+bool MessageCenter::notify(std::string event, std::vector<Any> params) {
     std::cout << "notifying for " << event << std::endl;
     
     for(auto observer : registeredResponders[event]) {
-        (observer)(std::vector<void*>());
+        (observer)(params);
     }
     
     return false;
