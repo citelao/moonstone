@@ -1,9 +1,22 @@
 #include "Moonstone.h"
 #include "messaging/Any.h"
 
+struct testObject {
+    std::string code;
+    
+    testObject(std::string a) : code(a) {};
+};
+
 void observer(std::vector<Any> unused)
 {
     std::cout << "callback" << std::endl;
+    
+    for( std::vector<Any>::const_iterator i = unused.begin(); i != unused.end(); ++i) {
+//        std::cout << "test" << std::endl;
+        testObject const a = *i->data<testObject const *>();
+        
+        std::cout << a.code << ' ';
+    }
 }
 
 int main() {
@@ -11,12 +24,12 @@ int main() {
     MessageCenter postman;
     
     std::vector<Any> args = std::vector<Any>();
-    args.push_back(new Any());
+    args.push_back(new Any(new testObject("test")));
     
     postman.registerObserver("eventname", observer);
-//    postman.notify("eventname", args);
-//    postman.notify("eventname", args);
-//    postman.notify("noresponse", args);
+    postman.notify("eventname", args);
+    postman.notify("eventname", args);
+    postman.notify("noresponse", args);
     
 //    
 //    moonstone.AddSystem(new RenderSystem);
